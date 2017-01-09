@@ -69,6 +69,14 @@ Public Class UserInterface
         Console.WriteLine("_______________________________________ Wine Search List _______________________________________")
     End Function
 
+    Public Function getDataForWine(dataTypeString As String) As String
+        getDataForWine = getWineData(dataTypeString)
+        Do While getDataForWine = ""
+            printErrorMessage("nothing")
+            getDataForWine = getWineData(dataTypeString)
+        Loop
+    End Function
+
     ''' <summary>
     ''' Prints the wine list, alternating color each line
     ''' </summary>
@@ -118,6 +126,31 @@ Public Class UserInterface
     ''' </summary>
     Public Sub printWineItemSearchEnding()
         Console.WriteLine("______________________________________ End Wine Search List ______________________________________")
+    End Sub
+
+    ''' <summary>
+    ''' Message to display when trying to add a wine item and id all ready in use
+    ''' </summary>
+    ''' <param name="idString">String</param>
+    Public Sub duplicateId(idString As String)
+        Console.WriteLine()
+        Console.ForegroundColor = ConsoleColor.Red
+        Console.WriteLine("-------------------------------------------------------------------------------------------")
+        Console.WriteLine($" The id: {idString} is all ready used. Each ID must be unique, please try again")
+        Console.WriteLine("-------------------------------------------------------------------------------------------")
+        Console.ForegroundColor = ConsoleColor.White
+    End Sub
+
+    ''' <summary>
+    ''' Message to display when a wine is added
+    ''' </summary>
+    ''' <param name="wineCollection">WineCollection</param>
+    Public Sub wineAddedMessage(wineCollection As WineCollection)
+        Console.WriteLine()
+        Console.WriteLine("----------------------------------------------------------------------------------------------------")
+        Console.WriteLine(wineCollection.getWineItem(wineCollection.wineCollectionSize - 1))
+        Console.WriteLine(" Wine was succesfully added.")
+        Console.WriteLine("----------------------------------------------------------------------------------------------------")
     End Sub
 
     ''' <summary>
@@ -192,6 +225,16 @@ Public Class UserInterface
     Private Function getSeachForInput(seachForQuestion As String) As String
         Console.Write(seachForQuestion)
         getSeachForInput = Console.ReadLine().Trim()
+    End Function
+
+    ''' <summary>
+    ''' Print out mesa
+    ''' </summary>
+    ''' <param name="dataTypeString"></param>
+    Private Function getWineData(dataTypeString As String) As String
+        Console.WriteLine()
+        Console.Write($" Enter the wine {dataTypeString}: ")
+        getWineData = Console.ReadLine()
     End Function
 
     ''' <summary>

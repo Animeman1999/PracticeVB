@@ -146,6 +146,12 @@ PracticeAsssignment
  <param name="seachForQuestion">String</param>
  <returns></returns>
 </member>
+<member name="M:PracticeAsssignment.UserInterface.getWineData(System.String)">
+ <summary>
+ Print out mesa
+ </summary>
+ <param name="dataTypeString"></param>
+</member>
 <member name="M:PracticeAsssignment.UserInterface.printErrorMessage(System.String)">
  <summary>
  Generic method to output the error message with the bad data
@@ -155,6 +161,41 @@ PracticeAsssignment
 <member name="T:PracticeAsssignment.WineCollection">
  <summary>
  Class to hold and process the WineCollection
+ </summary>
+</member>
+<member name="P:PracticeAsssignment.WineCollection.wineCollectionSize">
+ <summary>
+ Only backing field used for the collection to allow the size of the array to be known
+ </summary>
+ <returns>Int32</returns>
+</member>
+<member name="M:PracticeAsssignment.WineCollection.getWineItem(System.Int32)">
+ <summary>
+ Create string for the data in a single wine item
+ </summary>
+ <param name="whichWine">Integer</param>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.WineCollection.addWineItem(System.String,System.String,System.String)">
+ <summary>
+ Adds a wine item to the collection and keeps track of the total wine items in the list
+ </summary>
+ <param name="id">String</param>
+ <param name="description">String</param>
+ <param name="pack">String</param>
+</member>
+<member name="M:PracticeAsssignment.WineCollection.findWineItem(System.String,System.String,System.Int32)">
+ <summary>
+ Generic search that can be used no matter what property is used and or added in the future
+ </summary>
+ <param name="searchForString">String</param>
+ <param name="searchType">String</param>
+ <param name="currentIndex">String</param>
+ <returns></returns>
+</member>
+<member name="M:PracticeAsssignment.WineCollection.#ctor">
+ <summary>
+ Initailize the size of the collection upon creation of the WineCollection
  </summary>
 </member>
 <member name="M:PracticeAsssignment.WineFactory.SearchFor(PracticeAsssignment.WineCollection)">

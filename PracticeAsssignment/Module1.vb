@@ -26,7 +26,7 @@
                     Case 2
                         wineFactory.SearchFor(wineCollection)
                     Case 3
-
+                        wineFactory.AddAWine(wineCollection)
                     Case 4
 
                 End Select

@@ -41,4 +41,38 @@ Public Class WineFactory
         End If
 
     End Sub
+
+    ''' <summary>
+    ''' Logic to get the data for a wine item and validate the ID
+    ''' </summary>
+    ''' <param name="wineCollection">WineCollection</param>
+    Public Sub AddAWine(wineCollection As WineCollection)
+        Dim foundID = True
+        Dim idString As String = ui.getDataForWine("Id")
+        foundID = findWineByID(idString, wineCollection)
+        Do While foundID
+            ui.duplicateId(idString)
+            idString = ui.getDataForWine("Id")
+            foundID = findWineByID(idString, wineCollection)
+        Loop
+        Dim descriptionString As String = ui.getDataForWine("Description")
+        Dim packString As String = ui.getDataForWine("Pack")
+        wineCollection.addWineItem(idString, descriptionString, packString)
+        ui.wineAddedMessage(wineCollection)
+    End Sub
+
+    ''' <summary>
+    ''' Search for a wine by id and return true if found
+    ''' </summary>
+    ''' <param name="idString">String</param>
+    ''' <param name="wineCollection">WineCollection</param>
+    ''' <returns>Boolean</returns>
+    Private Function findWineByID(idString As String, wineCollection As WineCollection) As Boolean
+        findWineByID = False
+        For index As Int32 = 1 To wineCollection.wineCollectionSize - 1
+            If wineCollection.findWineItem(idString, "id", index) Then
+                findWineByID = True
+            End If
+        Next
+    End Function
 End Class
