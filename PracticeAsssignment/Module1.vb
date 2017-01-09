@@ -3,6 +3,8 @@
     Sub Main()
         Dim mainMenuChoice = 1
         Dim ui As UserInterface = New UserInterface()
+        Dim wineFactory As WineFactory = New WineFactory()
+
         Const CSV_FILE_PATH As String = "../../datafiles/WineList.csv"
 
         'Initialize the console
@@ -22,7 +24,7 @@
                     Case 1
                         ui.printWineList(wineCollection)
                     Case 2
-
+                        wineFactory.SearchFor(wineCollection)
                     Case 3
 
                     Case 4

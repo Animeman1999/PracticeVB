@@ -54,9 +54,28 @@ Public Class UserInterface
         searchMenu = inputString
     End Function
 
+    ''' <summary>
+    ''' Get the data to be searched for by the user, validate that there was somthing input, and print the heading for the search list
+    ''' </summary>
+    ''' <param name="searchTypeString"></param>
+    ''' <returns>String</returns>
+    Public Function getSearchForData(searchTypeString As String) As String
+        getSearchForData = getSeachForInput(searchForQuestion(searchTypeString))
+        Do While getSearchForData = ""
+            printErrorMessage("nothing")
+            getSearchForData = getSeachForInput(searchForQuestion(searchTypeString))
+        Loop
+        Console.WriteLine()
+        Console.WriteLine("_______________________________________ Wine Search List _______________________________________")
+    End Function
+
+    ''' <summary>
+    ''' Prints the wine list, alternating color each line
+    ''' </summary>
+    ''' <param name="wineCollection">WineCollection</param>
     Public Sub printWineList(wineCollection As WineCollection)
         Console.WriteLine()
-        Console.WriteLine("____________________________________ Wine List ____________________________________")
+        Console.WriteLine("_______________________________________ Wine List _______________________________________")
 
         For index As Integer = 0 To wineCollection.wineCollectionSize - 1
             If index Mod 2 = 0 Then
@@ -67,7 +86,38 @@ Public Class UserInterface
             Console.WriteLine(wineCollection.getWineItem(index))
         Next
 
-        Console.WriteLine("___________________________________ End Wine List ___________________________________")
+        Console.WriteLine("______________________________________ End Wine List ______________________________________")
+    End Sub
+
+    ''' <summary>
+    ''' Print out a single wine item as gray if even numbered in the list otherwise print as white
+    ''' </summary>
+    ''' <param name="wineCollection">WineCollection</param>
+    ''' <param name="index">Integer</param>
+    ''' <param name="evenBoolean">Boolean</param>
+    Public Sub printWineItem(wineCollection As WineCollection, index As Integer, evenBoolean As Boolean)
+        If evenBoolean Then
+            Console.ForegroundColor = ConsoleColor.Gray
+        Else
+            Console.ForegroundColor = ConsoleColor.White
+        End If
+        Console.WriteLine(wineCollection.getWineItem(index))
+
+    End Sub
+
+    ''' <summary>
+    ''' Print that the searched for data was not found
+    ''' </summary>
+    ''' <param name="searchedForString"></param>
+    Public Sub printSearchNotFound(searchedForString As String)
+        Console.WriteLine($" {searchedForString} not found")
+    End Sub
+
+    ''' <summary>
+    ''' Print the end of the wine search list
+    ''' </summary>
+    Public Sub printWineItemSearchEnding()
+        Console.WriteLine("______________________________________ End Wine Search List ______________________________________")
     End Sub
 
     ''' <summary>
@@ -102,6 +152,10 @@ Public Class UserInterface
         mainMenuString += " 5) Exit"
     End Function
 
+    ''' <summary>
+    ''' Creates the string used for the Search Menu
+    ''' </summary>
+    ''' <returns></returns>
     Private Function searchMenuString() As String
         searchMenuString = Environment.NewLine & " Search Menu" & Environment.NewLine
         searchMenuString += " 1) Search by ID" & Environment.NewLine
@@ -119,6 +173,25 @@ Public Class UserInterface
         Console.WriteLine(MessageToUser)
         Console.Write(" Enter the number of the item you wish to do: ")
         getUserMenuInput = Console.ReadLine.Trim
+    End Function
+
+    ''' <summary>
+    ''' Create the string needed for the print question
+    ''' </summary>
+    ''' <param name="searchTypeString">String</param>
+    ''' <returns>String</returns>
+    Private Function searchForQuestion(searchTypeString As String) As String
+        searchForQuestion = Environment.NewLine & $" Enter {searchTypeString} to be searched for: "
+    End Function
+
+    ''' <summary>
+    ''' Print the search for message and get the users input
+    ''' </summary>
+    ''' <param name="seachForQuestion">String</param>
+    ''' <returns></returns>
+    Private Function getSeachForInput(seachForQuestion As String) As String
+        Console.Write(seachForQuestion)
+        getSeachForInput = Console.ReadLine().Trim()
     End Function
 
     ''' <summary>

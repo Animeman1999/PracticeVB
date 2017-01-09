@@ -8,3 +8,13 @@ G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Deb
 G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.exe
 G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.xml
 G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.pdb
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\bin\Debug\PracticeAsssignment.exe.config
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\obj\Debug\PracticeAsssignment.exe
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\obj\Debug\PracticeAsssignment.xml
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\obj\Debug\PracticeAsssignment.pdb
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\bin\Debug\PracticeAsssignment.exe
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\bin\Debug\PracticeAsssignment.pdb
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\bin\Debug\PracticeAsssignment.xml
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\obj\Debug\PracticeAsssignment.vbprojResolveAssemblyReference.cache
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\obj\Debug\PracticeAsssignment.Resources.resources
+E:\ClassesWinter2017\VisualBasic\PracticeVB\PracticeAsssignment\obj\Debug\PracticeAsssignment.vbproj.GenerateResource.Cache

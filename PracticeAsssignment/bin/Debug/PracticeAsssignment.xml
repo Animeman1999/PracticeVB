@@ -62,7 +62,45 @@ PracticeAsssignment
  <summary>
  Outputs main menu, gets users input, and validates users input
  </summary>
+ <returns>Integer</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.searchMenu">
+ <summary>
+ Outputs search menu, gets users input and validates users input
+ </summary>
  <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.getSearchForData(System.String)">
+ <summary>
+ Get the data to be searched for by the user, validate that there was somthing input, and print the heading for the search list
+ </summary>
+ <param name="searchTypeString"></param>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.printWineList(PracticeAsssignment.WineCollection)">
+ <summary>
+ Prints the wine list, alternating color each line
+ </summary>
+ <param name="wineCollection">WineCollection</param>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.printWineItem(PracticeAsssignment.WineCollection,System.Int32,System.Boolean)">
+ <summary>
+ Print out a single wine item as gray if even numbered in the list otherwise print as white
+ </summary>
+ <param name="wineCollection">WineCollection</param>
+ <param name="index">Integer</param>
+ <param name="evenBoolean">Boolean</param>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.printSearchNotFound(System.String)">
+ <summary>
+ Print that the searched for data was not found
+ </summary>
+ <param name="searchedForString"></param>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.printWineItemSearchEnding">
+ <summary>
+ Print the end of the wine search list
+ </summary>
 </member>
 <member name="M:PracticeAsssignment.UserInterface.enterAnyKeyToContinue">
  <summary>
@@ -81,6 +119,12 @@ PracticeAsssignment
  </summary>
  <returns>String</returns>
 </member>
+<member name="M:PracticeAsssignment.UserInterface.searchMenuString">
+ <summary>
+ Creates the string used for the Search Menu
+ </summary>
+ <returns></returns>
+</member>
 <member name="M:PracticeAsssignment.UserInterface.getUserMenuInput(System.String)">
  <summary>
  Generic method to get users menu choice
@@ -88,11 +132,37 @@ PracticeAsssignment
  <param name="MessageToUser">String</param>
  <returns>String</returns>
 </member>
+<member name="M:PracticeAsssignment.UserInterface.searchForQuestion(System.String)">
+ <summary>
+ Create the string needed for the print question
+ </summary>
+ <param name="searchTypeString">String</param>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.getSeachForInput(System.String)">
+ <summary>
+ Print the search for message and get the users input
+ </summary>
+ <param name="seachForQuestion">String</param>
+ <returns></returns>
+</member>
 <member name="M:PracticeAsssignment.UserInterface.printErrorMessage(System.String)">
  <summary>
  Generic method to output the error message with the bad data
  </summary>
  <param name="BadInput">String</param>
+</member>
+<member name="T:PracticeAsssignment.WineCollection">
+ <summary>
+ Class to hold and process the WineCollection
+ </summary>
+</member>
+<member name="M:PracticeAsssignment.WineFactory.SearchFor(PracticeAsssignment.WineCollection)">
+ <summary>
+ Logic used to choose type of information to search for, get the data to search for, search for the data and 
+ print out the results
+ </summary>
+ <param name="wineCollection"></param>
 </member>
 </members>
 </doc>
