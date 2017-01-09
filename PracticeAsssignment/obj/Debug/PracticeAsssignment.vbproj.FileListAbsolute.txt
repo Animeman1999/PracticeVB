@@ -1,0 +1,10 @@
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\bin\Debug\PracticeAsssignment.exe.config
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\bin\Debug\PracticeAsssignment.exe
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\bin\Debug\PracticeAsssignment.pdb
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\bin\Debug\PracticeAsssignment.xml
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.vbprojResolveAssemblyReference.cache
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.Resources.resources
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.vbproj.GenerateResource.Cache
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.exe
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.xml
+G:\ClassesWinter2017\VisualBasic\PracticeAsssignment\PracticeAsssignment\obj\Debug\PracticeAsssignment.pdb

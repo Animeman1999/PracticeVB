@@ -1,0 +1,98 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PracticeAsssignment
+</name>
+</assembly>
+<members>
+<member name="T:PracticeAsssignment.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PracticeAsssignment.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PracticeAsssignment.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:PracticeAsssignment.CSVInterface">
+ <summary>
+ Class to read and write to a CSV file
+ </summary>
+</member>
+<member name="M:PracticeAsssignment.CSVInterface.ReadCSVFile(System.String,PracticeAsssignment.WineCollection)">
+ <summary>
+ Method to read in a CSV File. 
+ </summary>
+ <param name="csvFilePath">String</param>
+ <param name="wineCollection">WineItem</param>
+</member>
+<member name="M:PracticeAsssignment.CSVInterface.ProcessRecord(System.String,PracticeAsssignment.WineCollection,System.Int32)">
+ <summary>
+ Method to parse out one line of read in wine data and create a wine item
+ </summary>
+ <param name="inputString">String</param>
+ <param name="wineCollection">WineItem</param>
+ <param name="index">Integer</param>
+</member>
+<member name="T:PracticeAsssignment.UserInterface">
+ <summary>
+ Class to output to the user and get input from the user
+ </summary>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.initializeConsole">
+ <summary>
+ Sets the size and buffer of the console
+ </summary>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.startProgram">
+ <summary>
+ Outputs start menu, gets users input, and validates users input
+ </summary>
+ <returns>Boolean</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.mainMenu">
+ <summary>
+ Outputs main menu, gets users input, and validates users input
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.enterAnyKeyToContinue">
+ <summary>
+ Method to pause before closing program
+ </summary>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.loadCSVfileString">
+ <summary>
+ Creates the string used for the start of program
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.mainMenuString">
+ <summary>
+ Creates the string used for the Main Menu
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.getUserMenuInput(System.String)">
+ <summary>
+ Generic method to get users menu choice
+ </summary>
+ <param name="MessageToUser">String</param>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.printErrorMessage(System.String)">
+ <summary>
+ Generic method to output the error message with the bad data
+ </summary>
+ <param name="BadInput">String</param>
+</member>
+</members>
+</doc>
