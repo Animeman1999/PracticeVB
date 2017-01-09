@@ -45,11 +45,11 @@ Public Class UserInterface
     ''' Outputs search menu, gets users input and validates users input
     ''' </summary>
     ''' <returns>String</returns>
-    Public Function searchMenu() As String
-        Dim inputString As String = getUserMenuInput(searchMenuString)
+    Public Function searchMenu(searchOrDeleteString As String) As String
+        Dim inputString As String = getUserMenuInput(searchMenuString(searchOrDeleteString))
         Do While inputString <> "1" And inputString <> "2" And inputString <> "3" And inputString <> "4"
             printErrorMessage(inputString)
-            inputString = getUserMenuInput(searchMenuString)
+            inputString = getUserMenuInput(searchMenuString(searchOrDeleteString))
         Loop
         searchMenu = inputString
     End Function
@@ -59,22 +59,41 @@ Public Class UserInterface
     ''' </summary>
     ''' <param name="searchTypeString"></param>
     ''' <returns>String</returns>
-    Public Function getSearchForData(searchTypeString As String) As String
-        getSearchForData = getSeachForInput(searchForQuestion(searchTypeString))
+    Public Function getSearchForData(searchTypeString As String, searchOrDeleteString As String) As String
+        getSearchForData = getSeachForInput(searchForQuestion(searchTypeString, searchOrDeleteString))
         Do While getSearchForData = ""
             printErrorMessage("nothing")
-            getSearchForData = getSeachForInput(searchForQuestion(searchTypeString))
+            getSearchForData = getSeachForInput(searchForQuestion(searchTypeString, searchOrDeleteString))
         Loop
         Console.WriteLine()
-        Console.WriteLine("_______________________________________ Wine Search List _______________________________________")
+        Console.WriteLine($"_______________________________________ Wine {searchOrDeleteString} List _______________________________________")
     End Function
-
+    ''' <summary>
+    ''' Loop until data is entered by user for data type specified
+    ''' </summary>
+    ''' <param name="dataTypeString">String</param>
+    ''' <returns>String</returns>
     Public Function getDataForWine(dataTypeString As String) As String
         getDataForWine = getWineData(dataTypeString)
         Do While getDataForWine = ""
             printErrorMessage("nothing")
             getDataForWine = getWineData(dataTypeString)
         Loop
+    End Function
+
+    Public Function getAreYouSureToDelete() As Boolean
+        Dim yesOrNoInputString = getYesOrNo()
+        Do While yesOrNoInputString <> "y" And yesOrNoInputString <> "yes" And yesOrNoInputString <> "n" And yesOrNoInputString <> "no"
+            printErrorMessage(yesOrNoInputString)
+            yesOrNoInputString = getYesOrNo()
+        Loop
+        If yesOrNoInputString = "y" Or yesOrNoInputString = "yes" Then
+            getAreYouSureToDelete = True
+            Console.WriteLine("getAreYouSureToDelete = True")
+        Else
+            getAreYouSureToDelete = False
+            Console.WriteLine("getAreYouSureToDelete = False")
+        End If
     End Function
 
     ''' <summary>
@@ -124,8 +143,8 @@ Public Class UserInterface
     ''' <summary>
     ''' Print the end of the wine search list
     ''' </summary>
-    Public Sub printWineItemSearchEnding()
-        Console.WriteLine("______________________________________ End Wine Search List ______________________________________")
+    Public Sub printWineItemSearchEnding(searchOrDeleteString As String)
+        Console.WriteLine($"______________________________________ End Wine {searchOrDeleteString} List ______________________________________")
     End Sub
 
     ''' <summary>
@@ -189,11 +208,11 @@ Public Class UserInterface
     ''' Creates the string used for the Search Menu
     ''' </summary>
     ''' <returns></returns>
-    Private Function searchMenuString() As String
+    Private Function searchMenuString(searchOrDeleteString) As String
         searchMenuString = Environment.NewLine & " Search Menu" & Environment.NewLine
-        searchMenuString += " 1) Search by ID" & Environment.NewLine
-        searchMenuString += " 2) Search by Description" & Environment.NewLine
-        searchMenuString += " 3) Search by Pack" & Environment.NewLine
+        searchMenuString += $" 1) {searchOrDeleteString} by ID" & Environment.NewLine
+        searchMenuString += $" 2) {searchOrDeleteString} by Description" & Environment.NewLine
+        searchMenuString += $" 3) {searchOrDeleteString} by Pack" & Environment.NewLine
         searchMenuString += " 4) Exit"
     End Function
 
@@ -213,8 +232,8 @@ Public Class UserInterface
     ''' </summary>
     ''' <param name="searchTypeString">String</param>
     ''' <returns>String</returns>
-    Private Function searchForQuestion(searchTypeString As String) As String
-        searchForQuestion = Environment.NewLine & $" Enter {searchTypeString} to be searched for: "
+    Private Function searchForQuestion(searchTypeString As String, searchOrDeleteString As String) As String
+        searchForQuestion = Environment.NewLine & $" Enter {searchTypeString} to be {searchOrDeleteString} for: "
     End Function
 
     ''' <summary>
@@ -235,6 +254,16 @@ Public Class UserInterface
         Console.WriteLine()
         Console.Write($" Enter the wine {dataTypeString}: ")
         getWineData = Console.ReadLine()
+    End Function
+
+    Private Function getYesOrNo() As String
+        Console.WriteLine()
+        Console.Write(YesOrNoString)
+        getYesOrNo = Console.ReadLine.Trim()
+    End Function
+
+    Private Function YesOrNoString() As String
+        YesOrNoString = " Are you sure you wish to delete this list?" & Environment.NewLine() & "Enter Yes or No: "
     End Function
 
     ''' <summary>

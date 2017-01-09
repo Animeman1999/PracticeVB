@@ -67,6 +67,17 @@ Public Class WineCollection
         'End Select
     End Function
 
+    Public Sub swapWineItem(fromIndex As Integer, toIndex As Integer)
+        wineCollection(toIndex) = wineCollection(fromIndex)
+    End Sub
+
+    Public Sub deleteRemainingItems(fromIndex As Integer)
+        For index As Integer = wineCollectionSize - fromIndex - 1 To wineCollectionSize - 1
+            wineCollection(index) = Nothing
+        Next
+        _wineCollectionSize -= fromIndex
+    End Sub
+
     ''' <summary>
     ''' Initailize the size of the collection upon creation of the WineCollection
     ''' </summary>

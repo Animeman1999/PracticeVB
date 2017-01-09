@@ -24,11 +24,11 @@
                     Case 1
                         ui.printWineList(wineCollection)
                     Case 2
-                        wineFactory.SearchFor(wineCollection)
+                        wineFactory.SearchFor(wineCollection, "Search")
                     Case 3
                         wineFactory.AddAWine(wineCollection)
                     Case 4
-
+                        wineFactory.SearchFor(wineCollection, "Delete")
                 End Select
             Loop
             ui.enterAnyKeyToContinue()

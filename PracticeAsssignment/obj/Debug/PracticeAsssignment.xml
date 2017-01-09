@@ -64,17 +64,24 @@ PracticeAsssignment
  </summary>
  <returns>Integer</returns>
 </member>
-<member name="M:PracticeAsssignment.UserInterface.searchMenu">
+<member name="M:PracticeAsssignment.UserInterface.searchMenu(System.String)">
  <summary>
  Outputs search menu, gets users input and validates users input
  </summary>
  <returns>String</returns>
 </member>
-<member name="M:PracticeAsssignment.UserInterface.getSearchForData(System.String)">
+<member name="M:PracticeAsssignment.UserInterface.getSearchForData(System.String,System.String)">
  <summary>
  Get the data to be searched for by the user, validate that there was somthing input, and print the heading for the search list
  </summary>
  <param name="searchTypeString"></param>
+ <returns>String</returns>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.getDataForWine(System.String)">
+ <summary>
+ Loop until data is entered by user for data type specified
+ </summary>
+ <param name="dataTypeString">String</param>
  <returns>String</returns>
 </member>
 <member name="M:PracticeAsssignment.UserInterface.printWineList(PracticeAsssignment.WineCollection)">
@@ -97,10 +104,22 @@ PracticeAsssignment
  </summary>
  <param name="searchedForString"></param>
 </member>
-<member name="M:PracticeAsssignment.UserInterface.printWineItemSearchEnding">
+<member name="M:PracticeAsssignment.UserInterface.printWineItemSearchEnding(System.String)">
  <summary>
  Print the end of the wine search list
  </summary>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.duplicateId(System.String)">
+ <summary>
+ Message to display when trying to add a wine item and id all ready in use
+ </summary>
+ <param name="idString">String</param>
+</member>
+<member name="M:PracticeAsssignment.UserInterface.wineAddedMessage(PracticeAsssignment.WineCollection)">
+ <summary>
+ Message to display when a wine is added
+ </summary>
+ <param name="wineCollection">WineCollection</param>
 </member>
 <member name="M:PracticeAsssignment.UserInterface.enterAnyKeyToContinue">
  <summary>
@@ -119,7 +138,7 @@ PracticeAsssignment
  </summary>
  <returns>String</returns>
 </member>
-<member name="M:PracticeAsssignment.UserInterface.searchMenuString">
+<member name="M:PracticeAsssignment.UserInterface.searchMenuString(System.Object)">
  <summary>
  Creates the string used for the Search Menu
  </summary>
@@ -132,7 +151,7 @@ PracticeAsssignment
  <param name="MessageToUser">String</param>
  <returns>String</returns>
 </member>
-<member name="M:PracticeAsssignment.UserInterface.searchForQuestion(System.String)">
+<member name="M:PracticeAsssignment.UserInterface.searchForQuestion(System.String,System.String)">
  <summary>
  Create the string needed for the print question
  </summary>
@@ -198,12 +217,26 @@ PracticeAsssignment
  Initailize the size of the collection upon creation of the WineCollection
  </summary>
 </member>
-<member name="M:PracticeAsssignment.WineFactory.SearchFor(PracticeAsssignment.WineCollection)">
+<member name="M:PracticeAsssignment.WineFactory.SearchFor(PracticeAsssignment.WineCollection,System.String)">
  <summary>
  Logic used to choose type of information to search for, get the data to search for, search for the data and 
  print out the results
  </summary>
  <param name="wineCollection"></param>
+</member>
+<member name="M:PracticeAsssignment.WineFactory.AddAWine(PracticeAsssignment.WineCollection)">
+ <summary>
+ Logic to get the data for a wine item and validate the ID
+ </summary>
+ <param name="wineCollection">WineCollection</param>
+</member>
+<member name="M:PracticeAsssignment.WineFactory.findWineByID(System.String,PracticeAsssignment.WineCollection)">
+ <summary>
+ Search for a wine by id and return true if found
+ </summary>
+ <param name="idString">String</param>
+ <param name="wineCollection">WineCollection</param>
+ <returns>Boolean</returns>
 </member>
 </members>
 </doc>
