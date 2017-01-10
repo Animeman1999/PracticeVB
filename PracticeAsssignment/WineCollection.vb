@@ -72,7 +72,10 @@ Public Class WineCollection
     End Sub
 
     Public Sub deleteRemainingItems(fromIndex As Integer)
-        For index As Integer = wineCollectionSize - fromIndex - 1 To wineCollectionSize - 1
+        Dim temp As Int16 = 0
+
+        For index As Integer = _wineCollectionSize - fromIndex To _wineCollectionSize - 1
+            temp += 1
             wineCollection(index) = Nothing
         Next
         _wineCollectionSize -= fromIndex

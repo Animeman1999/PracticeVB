@@ -217,7 +217,7 @@ PracticeAsssignment
  Initailize the size of the collection upon creation of the WineCollection
  </summary>
 </member>
-<member name="M:PracticeAsssignment.WineFactory.SearchFor(PracticeAsssignment.WineCollection,System.String)">
+<member name="M:PracticeAsssignment.WineFactory.SearchForDelete(PracticeAsssignment.WineCollection,System.String)">
  <summary>
  Logic used to choose type of information to search for, get the data to search for, search for the data and 
  print out the results

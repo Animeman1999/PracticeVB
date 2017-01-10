@@ -89,10 +89,8 @@ Public Class UserInterface
         Loop
         If yesOrNoInputString = "y" Or yesOrNoInputString = "yes" Then
             getAreYouSureToDelete = True
-            Console.WriteLine("getAreYouSureToDelete = True")
         Else
             getAreYouSureToDelete = False
-            Console.WriteLine("getAreYouSureToDelete = False")
         End If
     End Function
 
@@ -179,6 +177,11 @@ Public Class UserInterface
         Console.WriteLine()
         Console.WriteLine(" Hit any key to continue. . .")
         Console.ReadKey()
+    End Sub
+
+    Public Sub itemsDeleted()
+        Console.WriteLine()
+        Console.WriteLine(" Items were deleted.")
     End Sub
 
     ''' <summary>

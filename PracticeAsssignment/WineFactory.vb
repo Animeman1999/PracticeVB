@@ -2,30 +2,34 @@
 Public Class WineFactory
     Private ui As UserInterface = New UserInterface()
     Private printBool As Boolean = True
-    Private searchTypeString
+    Private searchTypeString As String
+    Private searchForDataString As String
 
     ''' <summary>
     ''' Logic used to choose type of information to search for, get the data to search for, search for the data and 
     ''' print out the results
     ''' </summary>
     ''' <param name="wineCollection"></param>
-    Public Sub SearchFor(wineCollection As WineCollection, searchOrDeleteString As String)
+    Public Sub SearchForDelete(wineCollection As WineCollection, searchOrDeleteString As String)
         If printBool Then
             searchTypeString = ui.searchMenu(searchOrDeleteString)
-        End If
 
-        Select Case searchTypeString
-            Case "1"
-                searchTypeString = NameOf(WineItem.id)
-            Case "2"
-                searchTypeString = NameOf(WineItem.description)
-            Case "3"
-                searchTypeString = NameOf(WineItem.pack)
-            Case "4"
-                searchTypeString = "exit"
-        End Select
+            Select Case searchTypeString
+                Case "1"
+                    searchTypeString = NameOf(WineItem.id)
+                Case "2"
+                    searchTypeString = NameOf(WineItem.description)
+                Case "3"
+                    searchTypeString = NameOf(WineItem.pack)
+                Case "4"
+                    searchTypeString = "exit"
+            End Select
+        End If
         If searchTypeString <> "exit" Then
-            Dim searchForDataString As String = ui.getSearchForData(searchTypeString, searchOrDeleteString)
+            If printBool Then
+                searchForDataString = ui.getSearchForData(searchTypeString, searchOrDeleteString)
+            End If
+
             Dim evenBoolean As Boolean = False
             Dim countInt As Int32 = 0
             For index As Int32 = 0 To wineCollection.wineCollectionSize - 1
@@ -39,11 +43,10 @@ Public Class WineFactory
                         End If
                         ui.printWineItem(wineCollection, index, evenBoolean)
                     Else
-                        Console.WriteLine($"swapping {index + countInt} with {index}")
                         wineCollection.swapWineItem(index + countInt, index)
                     End If
-
                 End If
+
             Next
             If countInt = 0 Then
                 ui.printSearchNotFound(searchForDataString)
@@ -53,6 +56,8 @@ Public Class WineFactory
                 If searchOrDeleteString = "Delete" Then
                     If ui.getAreYouSureToDelete() Then
                         printBool = False
+                        SearchForDelete(wineCollection, searchOrDeleteString)
+                        ui.itemsDeleted()
                     End If
                 End If
             Else
